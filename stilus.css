@@ -1,0 +1,86 @@
+main, header, nav, article, aside, footer {
+	border: 1px solid gray;
+}
+main {
+    display: grid;
+    grid-template-areas:
+                        "h h h h"
+                        "n n n n"
+                        "a a a as"
+                        "f f f f";
+}
+header {
+    grid-area:h;
+}
+nav {
+    grid-area:n;
+}
+nav ul li {
+    display: inline;
+    padding: 5px;
+}
+article {
+    display: grid;
+    grid-area:a;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: pink;
+    grid-gap: 10px;
+}
+.termekek {
+    background-color: white;
+    padding: 15px;
+    position: relative;
+}
+
+.termekek button{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.termekek span{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+
+aside {
+    grid-area:as;
+}
+
+aside li{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+aside ul li {
+    list-style-type: none;
+}
+
+aside ul{
+    padding-left: 0;
+}
+
+
+footer {
+    grid-area:f;
+}
+
+@media screen and (max-width:600px){
+    footer nav ul {
+        grid-template-columns: 1fr;
+    }
+    main {
+        grid-template-areas: "h"
+                             "a"
+                             "as"
+                             "f";
+    }
+    header nav ul {
+        grid-template-columns: 1fr;
+    }
+    article{
+        grid-template-columns: 1fr;
+    }
+}
